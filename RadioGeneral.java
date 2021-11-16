@@ -8,7 +8,7 @@ public abstract class RadioGeneral{
   private playList lista2;
   private playList lista3;
   private ArrayList<String> contactos;
-  private double volumen;
+  private int volumen;
   private double emisoraActual;
   private String modulacion;
   private boolean telefono;
@@ -43,6 +43,18 @@ public abstract class RadioGeneral{
 
 
     //---------Lista 3 (elaborada por )---------
+
+
+    //Valores iniciales (e instancia) para el resto de propiedades.
+    contactos = new ArrayList<String>();
+
+    volumen = 10;
+
+    emisoraActual =50.0;
+
+    modulacion = "AM";
+
+    telefono = false;
   }
 
   //Método abstracto
