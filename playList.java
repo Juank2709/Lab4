@@ -12,4 +12,12 @@ public class playList{
     for (int i = 0; i < cs.size(); i++)
       canciones.add(cs.get(i));
   }
+
+  public String getNombre(){
+    return nombre;
+  }
+
+  public Cancion getCancion(int i){
+    return canciones.get(i);
+  }
 }

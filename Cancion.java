@@ -11,4 +11,12 @@ public class Cancion{
     duracion = dura;
     genero = g;
   }
+
+  public String getNombre(){
+    return nombreC;
+  }
+
+  public String toString(){
+    return nombreC + ", de " + autor + ", duración: " + duracion + " género: " + genero;
+  }
 }
