@@ -30,8 +30,8 @@ public class CarroA extends RadioGeneral implements RadioA{
     for (int j = 0; j < getEmisoras("FM").length; j++)
       if (getEmisoras("FM")[j] != 0.0) cont2++;
 
-    if (getEncendido()) s += "Radio del auto tipo C:\nEstado: encendido" + "\n" + cont1 + " emisoras de radio en AM guardadas\n" + cont2 + " emisoras de radio en FM guardadas\nPlaylists: " + getLista(1).getNombre() + ", " + getLista(2).getNombre() + ", " + getLista(3).getNombre() + "\nNúmero de contactos: " + getContactos().size() + "Volumen actual: " + getVolumen() + "\nEmisora actual: " + getEmisora() + "\nModo " + getModulacion();
-    else s += "Radio del auto tipo C:\nEstado: apagado";
+    if (getEncendido()) s += "Radio del auto tipo A:\nEstado: encendido" + "\n" + cont1 + " emisoras de radio en AM guardadas\n" + cont2 + " emisoras de radio en FM guardadas\nPlaylists: " + getLista(1).getNombre() + ", " + getLista(2).getNombre() + ", " + getLista(3).getNombre() + "\nNúmero de contactos: " + getContactos().size() + "Volumen actual: " + getVolumen() + "\nEmisora actual: " + getEmisora() + "\nModo " + getModulacion();
+    else s += "Radio del auto tipo A:\nEstado: apagado";
 
     if (getTelefono()) s += "\nEl teléfono está conectado.";
     else s += "\nEl teléfono no está conectado";
