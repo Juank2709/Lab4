@@ -7,12 +7,15 @@ public abstract class RadioGeneral{
   private playList lista1;
   private playList lista2;
   private playList lista3;
-  private ArrayList<String> contactos;
+  private ArrayList<Contacto> contactos;
   private int volumen;
   private double emisoraActual;
   private String modulacion;
   private boolean telefono;
   private int cancionActual;
+	protected Contacto ultCont;
+	private int estadoLlamada = 0;
+	private String x;
 
   public RadioGeneral(){
     encendido = false;
@@ -23,6 +26,7 @@ public abstract class RadioGeneral{
     ArrayList<Cancion> canciones1 = new ArrayList<Cancion>();
     Cancion cancion1 = new Cancion("Como Abeja al Panal", "Juan Luis Guerra", 4.13, "Bachata");
     canciones1.add(cancion1);
+		cancion1 = null;
 
     Cancion cancion2 = new Cancion("Pégame Tu Vicio", "Eddy Herrera", 5.07, "Merengue");
     canciones1.add(cancion2);
@@ -39,15 +43,31 @@ public abstract class RadioGeneral{
     //Instancia de lista "Latino Bailable"
     lista1 = new playList("Latino Bailable", canciones1);
 
+		//---------Lista 2 (elaborada por Javier Bocanegra)---------
+    ArrayList<Cancion> canciones2 = new ArrayList<Cancion>();
+    Cancion cancion6 = new Cancion("Bluebird", "Alessia Cara", 3.14, "Pop");
+    canciones2.add(cancion6);
 
-    //---------Lista 2 (elaborada por )---------
+    Cancion cancion7 = new Cancion("indica", "Alaina Castillo", 3.25, "Pop");
+    canciones2.add(cancion7);
+
+    Cancion cancion8 = new Cancion("Water", "Kehlani", 2.02, "RnB");
+    canciones2.add(cancion8);
+
+    Cancion cancion9 = new Cancion("Drew Barrymore", "SZA", 3.30, "RnB");
+    canciones2.add(cancion9);
+
+    Cancion cancion10 = new Cancion("July", "Noah Cyrus", 2.32, "Pop");
+    canciones2.add(cancion10);
+
+    //Instancia de lista "Chill Relax"
+    lista2 = new playList("Chill Relax", canciones2);
 
 
     //---------Lista 3 (elaborada por )---------
 
 
     //Valores iniciales (e instancia) para el resto de propiedades.
-    contactos = new ArrayList<String>();
 
     volumen = 10;
 
@@ -58,6 +78,21 @@ public abstract class RadioGeneral{
     telefono = false;
 
     cancionActual = 0;
+
+		//Lista de contactos
+    contactos = new ArrayList<Contacto>();
+
+    Contacto contacto1 = new Contacto("Jabion", "22000000");
+    contactos.add(contacto1);
+
+    Contacto contacto2 = new Contacto("Juank", "31415926");
+    contactos.add(contacto2);
+
+		Contacto contacto3 = new Contacto("Lusi", "27182818");
+    contactos.add(contacto3);
+
+		Contacto contacto4 = new Contacto("Rukal", "16180339");
+    contactos.add(contacto4);
   }
 
   public double[] getEmisoras(String m){
@@ -82,13 +117,17 @@ public abstract class RadioGeneral{
     return modulacion;
   }
 
-  public ArrayList<String> getContactos(){
+  public ArrayList<Contacto> getContactos(){
     return contactos;
   }
 
   public void setCancionA(boolean direccion){
     if (direccion) cancionActual++;
     else cancionActual--;
+  }
+
+  public int getCancionA(){
+    return cancionActual;
   }
 
   public void setEncendido(boolean e){
@@ -183,6 +222,46 @@ public abstract class RadioGeneral{
     }
   }
   //---------Finalizan métodos del modo reproducción---------
+
+
+	//---------Inician métodos del modo telefono---------
+
+	public String llamar(int x)
+	{
+		ultCont = contactos.get(x-1);
+		estadoLlamada = 1;
+		return "Llamando a " + 	contactos.get(x-1).getNombre() + " al numero " + contactos.get(x-1).getNum();
+	}
+
+	public String colgar()
+	{
+		if (estadoLlamada == 1|| estadoLlamada == 2)
+		{
+			estadoLlamada = 0;
+			x = "Se colgó la llamada.";	
+		}
+		else
+		{
+			x = "No hay llamada en progreso.";
+		}
+		return x;
+	}
+	
+	public int getEstadoLlamada()
+	{
+		return estadoLlamada;
+	}
+
+	public void setEstadoLlamada(int x)
+	{
+		estadoLlamada = x;
+	}
+
+
+
+  //---------Finalizan métodos del modo telefono-------
+
+
 
   //Método abstracto
   abstract public String toString();
