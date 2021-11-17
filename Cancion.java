@@ -1,4 +1,5 @@
 public class Cancion{
+  //Propiedades.
   private String nombreC;
   private String autor;
   private double duracion;
@@ -12,10 +13,12 @@ public class Cancion{
     genero = g;
   }
 
+  //Para regresar el nombre de la canción.
   public String getNombre(){
     return nombreC;
   }
 
+  //Override del método toString.
   public String toString(){
     return nombreC + ", de " + autor + ", duración: " + duracion + " género: " + genero;
   }

@@ -27,6 +27,7 @@ public class CarroS extends RadioGeneral implements RadioS{
     return "Se planificará un viaje: ";
   }
 
+  //Override del método toString.
   public String toString(){
     String s = "";
 

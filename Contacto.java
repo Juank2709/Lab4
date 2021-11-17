@@ -35,3 +35,4 @@ public class Contacto
   public String toString(){
     return "\nNombre: " + nombre + "\nNúmero de teléfono: " + numero;
   }
+}

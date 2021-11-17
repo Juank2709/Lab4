@@ -4,16 +4,16 @@ public class CarroA extends RadioGeneral implements RadioA{
   //Constructor de la clase.
   public CarroA(){
     super();
-    
+    fecha = "";
   }
 
 	public String targetaPresentacion()
 	{
-		return "Mostrando la targeta de presentacion...";
-
+		return "Mostrando la targeta de presentación...";
 	}
 
   public String llamaUltimoC(){
+    estadoLlamada = 1;
     return "Llamando al último registro: " + ultCont.getNombre() + " al numero " + ultCont.getNum();
   }
 

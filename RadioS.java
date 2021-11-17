@@ -1,4 +1,4 @@
 public interface RadioS{
-  public String cambiarSalida(salida: String);
+  public String cambiarSalida(String salida);
   public String planificarV();
 }

@@ -14,7 +14,7 @@ public abstract class RadioGeneral{
   private boolean telefono;
   private int cancionActual;
 	protected Contacto ultCont;
-	private int estadoLlamada = 0;
+	protected int estadoLlamada = 0;
 	private String x;
 
   public RadioGeneral(){
@@ -64,7 +64,26 @@ public abstract class RadioGeneral{
     lista2 = new playList("Chill Relax", canciones2);
 
 
-    //---------Lista 3 (elaborada por )---------
+    //---------Lista 3 (elaborada por Lucy Elias)---------
+		 ArrayList<Cancion> canciones3 = new ArrayList<Cancion>();
+    Cancion cancion11 = new Cancion("Strawberry Kiwi", "Rauw Alejandro", 3.32, "Regueton");
+    canciones3.add(cancion11);
+
+    Cancion cancion12 = new Cancion("The Motto", "Tiesto", 2.45, "Electronica");
+    canciones3.add(cancion12);
+
+    Cancion cancion13 = new Cancion("Dancing", "James Hype", 4.00, "House");
+    canciones3.add(cancion13);
+
+    Cancion cancion14 = new Cancion("Gold Digger", "Kanye West", 3.28, "Hip-Hop");
+    canciones3.add(cancion14);
+
+    Cancion cancion15 = new Cancion("Time", "SG Lewis", 4.19, "Dance");
+    canciones3.add(cancion15);
+
+    //Instancia de lista "Fiestaa"
+    lista3 = new playList("Fiestaa", canciones3);
+
 
 
     //Valores iniciales (e instancia) para el resto de propiedades.
@@ -245,16 +264,6 @@ public abstract class RadioGeneral{
 			x = "No hay llamada en progreso.";
 		}
 		return x;
-	}
-	
-	public int getEstadoLlamada()
-	{
-		return estadoLlamada;
-	}
-
-	public void setEstadoLlamada(int x)
-	{
-		estadoLlamada = x;
 	}
 
 
